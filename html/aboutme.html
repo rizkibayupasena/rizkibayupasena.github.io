@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>John Doe - Web Developer</title>
+    <link href="'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'" rel="stylesheet">
+    <style>
+      
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #efefef;
+  background-color:#1f242d;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+
+header {
+
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav a {
+  color: #efefef;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: #ffff00;
+}
+
+/* Banner Styles */
+
+#banner {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+#banner h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#banner h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* About Styles */
+
+#about {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+#about h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Timeline Styles */
+
+#timeline {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+#timeline h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  list-style: none;
+  border-left: 4px solid #222;
+}
+
+.timeline li {
+margin-bottom: 40px;
+position: relative;
+}
+
+.content {
+margin-left: 80px;
+}
+
+.content h3 {
+font-size: 24px;
+font-weight: 700;
+margin-bottom: 10px;
+}
+
+.content h4 {
+font-size: 18px;
+font-weight: 400;
+margin-bottom: 10px;
+}
+
+.content p {
+font-size: 16px;
+line-height: 1.5;
+}
+
+.time {
+position: absolute;
+left: 0;
+top: 0;
+width: 60px;
+height: 60px;
+background-color: #222;
+border-radius: 50%;
+text-align: center;
+padding-top: 12px;
+color: white;
+}
+
+.time h4 {
+font-size: 18px;
+font-weight: 700;
+}
+
+/* Contact Styles */
+
+#contact {
+text-align: center;
+margin-top: 80px;
+margin-bottom: 80px;
+}
+
+#contact h2 {
+font-size: 36px;
+font-weight: 700;
+margin-bottom: 40px;
+}
+
+form label {
+display: block;
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 10px;
+}
+
+form input,
+form textarea {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+margin-bottom: 20px;
+border-radius: 4px;
+border: none;
+}
+
+form button {
+background-color: #222;
+color: white;
+border: none;
+border-radius: 4px;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+form button:hover {
+background-color: #444;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.avatar:hover:before {
+  opacity: 1;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+nav {
+  position: relative;
+  float: right;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  z-index: 999;
+  transition: top 0.5s ease-in-out;
+}
+
+nav.hidden {
+  top: -50px;
+}
+
+.content {
+  height: 800px;
+  margin-top: 50px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="../index.html">Home</a>
+      
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="banner" class="container">
+        <div class="header">
+             <div class="avatar">
+               <img src="../img/hero2.png" alt="Foto Profil">
+         </div>
+         <div class="header-info">
+        <h1>Rizki Bayu Pasena</h1>
+         <h3>UI Designer / frontend developer</h3>
+        </div>
+        </div>
+
+      </section>
+      <section id="about" class="container">
+        <h2>About Me</h2>
+        <div class="about-text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac metus non nisi pretium aliquet. Nulla facilisi. Etiam ullamcorper ex eu lacus laoreet, eu ultricies est commodo. Praesent ac mi in velit semper vulputate. Sed auctor orci lorem, eget lacinia velit convallis nec. Curabitur nec nunc aliquam, euismod augue ut, venenatis sapien. Ut nec aliquam enim, a commodo nisi. </p>
+          <p>Curabitur hendrerit tellus felis, sit amet iaculis velit ullamcorper vel. Nullam vulputate, quam in tincidunt bibendum, enim sapien convallis erat, nec mollis nisi est a eros. In eleifend convallis semper. Nunc id congue justo, in bibendum orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi sed bibendum lorem. Sed tincidunt efficitur nisl, eu bibendum nulla bibendum at. Vestibulum blandit consequat lectus, ac aliquet sapien feugiat eu. Donec rutrum, lectus non tempor euismod, augue velit bibendum enim, vel vulputate nisl nibh id augue. Integer sit amet malesuada ante, eu tincidunt dolor. </p>
+        </div>
+      </section>
+      <section id="timeline" class="container">
+        <h2>Experience</h2>
+        <ul class="timeline">
+          <li>
+            <div class="content">
+              <h3>Freelance</h3>
+              <h4>Not a working</h4>
+              <p>Nulla ullamcorper faucibus tortor, sed luctus leo dapibus sed. Sed sit amet dictum lacus. Donec auctor luctus urna, non tincidunt orci euismod at.</p>
+            </div>
+            <div class="time">
+              <h4>2018 - Present</h4>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!--<section id="contact" class="container">
+        <h2>Contact</h2>
+        <form action="#" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>-->
+    </main>
+    <script>
+      var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+   var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector("nav").classList.remove("hidden");
+  } else {
+    document.querySelector("nav").classList.add("hidden");
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+    </script>
+  </body>
+</html>
