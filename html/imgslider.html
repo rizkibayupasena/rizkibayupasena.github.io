@@ -4,95 +4,130 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galery</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'">
     <style>
 body {
     background-color: #1f242d;
-    margin: 0;
-    padding: 0;
+    font-family: "Poppins", sans-serif;
 }
 
-.slider-container {
-    width: 80%;
-    height: 300px;
-    margin: 50px auto;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15rem;
+  color: #fff000;
+  opacity: 50%;
+}
+
+@keyframes move-right {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 200px;
+  }
+}
+h1 {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .slider {
-    display: flex;
-    width: 816px;
-    height: 419px;
-    transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
 }
 
-.slider img {
-    width: 800px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 25%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    font-size: 1.5rem;
-    color: #333;
-    cursor: pointer;
-    z-index: 2;
+.slide.active {
+  opacity: 1;
 }
 
-.prev {
-    left: 20px;
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 3%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 3);
 }
 
-.next {
-    right: 20px;
-}
-</style>
+
+    </style>
 </head>
 <body>
-    <div class="slider-container">
-      <div class="slider">
-        <img src="/img/music_app.png" alt="Slide 1">
-        <img src="/img/web_design.png" alt="Slide 2">
-        <img src="/img/food_app.png" alt="Slide 3">
-      </div>
-      <button class="prev">Prev</button>
-      <button class="next">Next</button>
-    </div>
+  <div class="title">
+    <h1>L LATEST P PROJECT</h1>
+  </div>
+    <div class="slider">
+  <div class="slide active">
+    <img src="/img/food_app.png" alt="Slide 1">
+  </div>
+  <div class="slide">
+    <img src="/img/next.png" alt="Slide 2">
+  </div>
+  <div class="slide">
+    <img src="/img/music_app.png" alt="Slide 3">
+  </div>
+  <div class="slide">
+    <img src="/img/web_design.png" alt="Slide 4">
+  </div>
+  <div class="slide">
+    <img src="/img/music_app.png" alt="Slide 5">
+  </div>
+</div>
 
 </body>
+
 <script>
-    const slider = document.querySelector('.slider');
-    const images = document.querySelectorAll('.slider img');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    let counter = 1;
-    const size = images[0].clientWidth;
+    let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const maxIndex = slides.length - 1;
 
-    slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+function showSlide(index) {
+  if (index < 0) {
+    index = maxIndex;
+  } else if (index > maxIndex) {
+    index = 0;
+  }
 
-    nextButton.addEventListener('click', () => {
-      if (counter >= images.length - 1) return;
-      slider.style.transition = "transform 0.4s ease-in-out";
-      counter++;
-      slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    });
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[index].classList.add('active');
+  slideIndex = index;
+}
 
-    prevButton.addEventListener('click', () => {
-      if (counter <= 0) return;
-      slider.style.transition = "transform 0.4s ease-in-out";
-      counter--;
-      slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    });
+showSlide(slideIndex);
+
+setInterval(() => {
+  showSlide(slideIndex + 1);
+}, 3000);
 
 </script>
 </html>
