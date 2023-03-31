@@ -163,6 +163,24 @@ section {
     box-shadow: none;
 }
 
+.info {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--main-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-left: 2rem;
+}
+
+.info:hover {
+    box-shadow: none;
+}
+
+
 .home-content span{
     color: var(--main-color);
 }
@@ -400,6 +418,37 @@ span {
     color: var(--second-bg-color);
 }
 
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 10rem;
+    padding-top: 8rem;
+    
+}
+
+.contact-icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:8rem;
+    height: 8rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 4rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 30rem 0;
+    transition: .5s ease;
+}
+
+.contact-icon a:hover {
+    color: var(--bg-color);
+    background:#ffff00;
+
+}
+
 /* Break Points */
 @media (max-width: 1200px) {
     html {
@@ -413,7 +462,7 @@ span {
     }
 
     .home {
-        padding : 10rem;
+        padding : 7rem;
     }
 
     section {
@@ -470,8 +519,9 @@ span {
     .home {
         flex-direction: column;
         float: left;
+        padding-top: 11rem;    
     }
-
+    
     .home-content h3 {
         font-size: 2.6rem;
         
@@ -488,6 +538,7 @@ span {
 
     .about {
         flex-direction: column-reverse;
+        padding: 7rem
     }
 
     .about img {
@@ -516,11 +567,19 @@ span {
     .portfolio-container {
         grid-template-columns: 1fr;
     }
+    .home-content a {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 450px) {
     html {
         font-size: 50%;
+    
+    }
+
+    body {
+        overflow: hidden;
     }
 
     #form-google input {
@@ -538,6 +597,12 @@ span {
     
     .footer {
         font-size: 1rem;
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+    .info{
+        margin-left: -0.001rem;
     }
 }
 
