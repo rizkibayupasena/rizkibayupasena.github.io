@@ -60,4 +60,16 @@ window.onscroll = () => {
     loop: true
   });
 
+window.addEventListener("load", function() {
+  setTimeout(function(){
+    const loader = document.getElementById("loader");
+    loader.style.display = "none";
+  }, 3000); // menunda loader selama 3 detik (3000 milidetik)
+});
+
+
+
+
+
+
   
